@@ -41,6 +41,7 @@ contract BlindBoxNftTest is Test {
 
         vm.startPrank(owner);
 
+        assertEq("", bbnft.getTokenURI());
         bbnft.setTokenURI(tokenURI);
         assertEq(tokenURI, bbnft.getTokenURI());
 
