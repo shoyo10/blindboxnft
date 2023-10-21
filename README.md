@@ -1,19 +1,27 @@
-## Foundry
+## Week 7 - HW2
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+做一個隨機自由 mint token 的 ERC721
 
-Foundry consists of:
+* totalSupply: 500
+* mint(): 基本正常 mint，不要達到上限 500 即可
+* randomMint() 加分項目，隨機 mint tokenId (不重複)
+  * 隨機的方式有以下選擇方式
+    * 自己製作隨機 random，不限任何方法
+    * Chainlink VRF
+    * RANDAO
+* Implement 盲盒機制
+* 請寫測試確認解盲前的 tokenURI 及解盲後的 tokenURI
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
 
 ## Usage
+
+Available in forge 0.2.0 (87283bc 2023-10-06T00:32:37.923803000Z)
+
+### Install
+
+```shell
+$ forge install
+```
 
 ### Build
 
@@ -25,42 +33,4 @@ $ forge build
 
 ```shell
 $ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
 ```
